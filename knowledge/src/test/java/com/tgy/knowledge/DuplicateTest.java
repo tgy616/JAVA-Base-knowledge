@@ -60,6 +60,7 @@ public class DuplicateTest {
         list3.add("string3");
         list3.add("string2");
         list3.add("string2");
+
         HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
         for (String string : list3) {
             if (hashMap.get(string) != null) {
