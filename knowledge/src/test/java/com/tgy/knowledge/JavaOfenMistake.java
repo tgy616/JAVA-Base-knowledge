@@ -57,45 +57,45 @@ public class JavaOfenMistake {
 
         //3。在循环内部删除List中的一个元素
         //error method one
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
+      /*  ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
         for (int i = 0; i < list.size(); i++) {
             list.remove(i);
         }
-        System.out.println(list);
+        System.out.println(list);*/
         //结果打印：
         //[b, d]
 
 
         //error method two   将抛出ConcurrentModificationException异常。
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
+      /*  ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
         for (String s : list) {
             if (s.equals("a"))
                 list.remove(s);
-        }
+        }*/
 
         //right method
-        ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
+        /*ArrayList<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
         Iterator<String> iter = list.iterator();
         while (iter.hasNext()) {
             String s = iter.next();
             if (s.equals("a")) {
                 iter.remove();
             }
-        }
+        }*/
 
         //4.HashTable与HashMap
         //从算法的角度来讲，HashTable是一种数据结构名称。但是在Java中，这种数据结构叫做HashMap。HashTable与HashMap的一个
         // 主要的区别是HashTable是同步的，所以，通常来说，你会使用HashMap，而不是Hashtable。
 
         //5.使用集合原始类型（raw type）
-        public static void add(List list, Object o){
+        /*public static void add(List list, Object o){
             list.add(o);
         }
         public static void main(String[] args){
             List<String> list = new ArrayList<String>();
             add(list, 10);
             String s = list.get(0);
-        }
+        }*/
         //运行以上代码将会抛出异常：
         //
         //Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
@@ -129,15 +129,16 @@ public class JavaOfenMistake {
         // 另一个例子是排序和过滤：当然，你可以写一个方法来接收原始的集合，并且返回一个排好序的集合，但是那样对于大的集合就太浪费了。
 
         //9.“”还是构造方法
-        /*
-        有两种创建字符串的方式：
+
+        //有两种创建字符串的方式：
         //1. use double quotes
         String x = "abc";
         //2. use constructor
         String y = new String("abc");
-        它们之间有什么区别呢？
+        //它们之间有什么区别呢？
 
-        以下代码提供了一个快速回答：
+        //以下代码提供了一个快速回答：
+
 
         String a = "abcd";
         String b = "abcd";
@@ -147,6 +148,6 @@ public class JavaOfenMistake {
         String d = new String("abcd");
         System.out.println(c == d); // False
         System.out.println(c.equals(d)); // True
-        * */
+
     }
 }
