@@ -16,9 +16,14 @@ public class Demo05 {
 
         ArrayList<Demo05> list = new ArrayList<>();
         int count=0;
-        while (true){
-            list.add(new Demo05());//内存会满
-            count=count+1;
+        try {
+            while (true){
+                list.add(new Demo05());//内存会满 Error
+                count=count+1;
+            }
+        }catch (Throwable e){
+            System.out.println("COUNT:"+count);
+            e.printStackTrace();//业务逻辑，善后工作
         }
 
     }
