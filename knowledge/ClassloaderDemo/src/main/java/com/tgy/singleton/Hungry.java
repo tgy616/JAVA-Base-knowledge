@@ -1,7 +1,7 @@
 package com.tgy.singleton;
 
 /**
- * 恶汉式
+ * 饿汉式
  *
  * @author DragonSwimDiving
  * @program knowledge
